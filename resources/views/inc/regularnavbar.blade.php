@@ -6,20 +6,20 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
-                <li class="nav-item">
+                <li class="nav-item dashboard">
                 <a class="nav-link" href="javascript:void(0);" onclick="dashboard();return false;"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item active analytics_adtype">
                     <a class="nav-link" href="javascript:void(0);" onclick="adtype();return false;"><i class="far fa-address-book"></i>Analytics by Advertisement Type</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-clone"></i>Analytics by Social Media</a>
+                <li class="nav-item analytics_socialmedia">
+                    <a class="nav-link" href="javascript:void(0);" onclick="analytics_socialmedia();return false;"><i class="far fa-clone"></i>Analytics by Social Media</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-calendar-alt"></i>Analytics by Color</a>
+                <li class="nav-item analytics_color">
+                    <a class="nav-link" href="javascript:void(0);" onclick="analytics_color();return false;"><i class="far fa-calendar-alt"></i>Analytics by Color</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i>Analytics by Percentage</a>
+                <li class="nav-item analytics_percentage">
+                    <a class="nav-link" href="javascript:void(0);" onclick="analytics_percentage();return false;"><i class="far fa-chart-bar"></i>Analytics by Percentage</a>
                 </li>
                 {{-- <li class="nav-item">
                     <a class="nav-link" href="javascript:void(0);"><i class="far fa-copy"></i>Documents</a>

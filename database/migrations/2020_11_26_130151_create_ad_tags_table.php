@@ -15,11 +15,11 @@ class CreateAdTagsTable extends Migration
     {
         Schema::create('ad_tags', function (Blueprint $table) {
             $table->id();
-            $table->integer('ad_id')->unsigned();
+            $table->bigInteger('ad_id')->unsigned();
             $table->foreign('ad_id')->references('id')->on('ads');
 
 
-            $table->integer('tag_id')->unsigned();
+            $table->bigInteger('tag_id')->unsigned();
             $table->foreign('tag_id')->references('id')->on('tags');
             $table->timestamps();
         });

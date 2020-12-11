@@ -97,7 +97,13 @@
   
 <script>
     // ---------Responsive-navbar-active-animation-----------
-function test(){
+// function test(){
+  $(document).ready(function(){
+  var active = localStorage.getItem('active');
+  if(active !== null){
+    $('#navbarSupportedContent ul li').removeClass("active");
+    $('#navbarSupportedContent ul').find('.'+active).addClass('active');
+  }
   var tabsNewAnim = $('#navbarSupportedContent');
   var selectorNewAnim = $('#navbarSupportedContent').find('li').length;
   var activeItemNewAnim = tabsNewAnim.find('.active');
@@ -105,12 +111,23 @@ function test(){
   var activeWidthNewAnimWidth = activeItemNewAnim.innerWidth();
   var itemPosNewAnimTop = activeItemNewAnim.position();
   var itemPosNewAnimLeft = activeItemNewAnim.position();
-  $(".hori-selector").css({
-    "top":itemPosNewAnimTop.top + "px", 
-    "left":itemPosNewAnimLeft.left + "px",
-    "height": activeWidthNewAnimHeight + "px",
-    "width": activeWidthNewAnimWidth + "px"
-  });
+  var active_position = JSON.parse(localStorage.getItem('header_position'));
+
+  if(active_position == null){
+    $(".hori-selector").css({
+      "top":itemPosNewAnimTop.top + "px", 
+      "left":itemPosNewAnimLeft.left + "px",
+      "height": activeWidthNewAnimHeight + "px",
+      "width": activeWidthNewAnimWidth + "px"
+    });
+  } else{
+    $(".hori-selector").css({
+      "top":active_position.top + "px", 
+      "left":active_position.left + "px",
+      "height": active_position.height + "px",
+      "width": active_position.width + "px"
+    });
+  }
   $("#navbarSupportedContent").on("click","li",function(e){
     $('#navbarSupportedContent ul li').removeClass("active");
     $(this).addClass('active');
@@ -118,33 +135,60 @@ function test(){
     var activeWidthNewAnimWidth = $(this).innerWidth();
     var itemPosNewAnimTop = $(this).position();
     var itemPosNewAnimLeft = $(this).position();
+    var header_position = {
+      top : itemPosNewAnimTop.top,
+      left : itemPosNewAnimLeft.left,
+      height : activeWidthNewAnimHeight,
+      width : activeWidthNewAnimWidth
+    }
+    localStorage.setItem('header_position', JSON.stringify(header_position));
+    var active_position = JSON.parse(localStorage.getItem('header_position'));
     $(".hori-selector").css({
-      "top":itemPosNewAnimTop.top + "px", 
-      "left":itemPosNewAnimLeft.left + "px",
-      "height": activeWidthNewAnimHeight + "px",
-      "width": activeWidthNewAnimWidth + "px"
+      "top":active_position.top + "px", 
+      "left":active_position.left + "px",
+      "height": active_position.height + "px",
+      "width": active_position.width + "px"
     });
   });
-}
-$(document).ready(function(){
-  setTimeout(function(){ test(); });
+  
 });
-$(window).on('resize', function(){
-  setTimeout(function(){ test(); }, 500);
-});
-$(".navbar-toggler").click(function(){
-  setTimeout(function(){ test(); });
-});
+// }
+// $(document).ready(function(){
+//   setTimeout(function(){ test(); });
+// });
+// $(window).on('resize', function(){
+//   setTimeout(function(){ test(); }, 500);
+// });
+// $(".navbar-toggler").click(function(){
+//   setTimeout(function(){ test(); });
+// });
+  function dashboard()
+    {
+            localStorage.setItem('active', 'dashboard');
+            window.location.href = window.location.origin ;
+            console.log(window.location.origin)
+    }
 
-function dashboard()
-{
-        window.location.href = window.location.origin ;
-}
-
-function adtype()
-{
+    function adtype()
+    {
+            localStorage.setItem('active', 'analytics_adtype');
             window.location.href = window.location.origin + '/data';
-}
+    }
+    function analytics_socialmedia()
+    {
+            localStorage.setItem('active', 'analytics_socialmedia');
+            window.location.href = window.location.origin + '/data';
+    }
+    function analytics_color()
+    {
+            localStorage.setItem('active', 'analytics_color');
+            window.location.href = window.location.origin + '/data';
+    }
+    function analytics_percentage()
+    {
+            localStorage.setItem('active', 'analytics_percentage');
+            window.location.href = window.location.origin + '/data';
+    }
 </script>
 
 
