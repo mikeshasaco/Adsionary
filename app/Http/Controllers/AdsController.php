@@ -23,10 +23,9 @@ class AdsController extends Controller
         $tags = Tag::get();
         $percentages = Percentage::get();
         $socials = Social::get();
-        $colors = Color::get();
 
         // dd($adtype);
-        return view('ads.create', compact('adtype', 'industries', 'tags', 'percentages','socials', 'colors'));
+        return view('ads.create', compact('adtype', 'industries', 'tags', 'percentages','socials'));
     }
 
     public function store(Request $request)
@@ -44,7 +43,6 @@ class AdsController extends Controller
         $ad->adtype_id =  $request->adtype_id;
         $ad->industry_id = $request->industry_id;
         $ad->percentage_id = $request->percentage_id;
-        $ad->color_id = $request->color_id;
         $ad->social_id = $request->social_id;
        
 
@@ -67,7 +65,6 @@ class AdsController extends Controller
     {
         $ads = Ad::join('industries', 'industries.id', 'ads.industry_id')
             ->join('adtypes', 'adtypes.id', 'ads.adtype_id')
-            ->join('colors', 'colors.id', 'ads.color_id')
             ->join('socials', 'socials.id', 'ads.social_id')
 
             ->leftjoin('percentages', 'percentages.id', 'ads.percentage_id')
@@ -152,40 +149,40 @@ class AdsController extends Controller
         return view('ads.industrypercent', compact('industryid', 'int', 'intantype'));
     }
 
-    public function allcolor()
-    {
+    // public function allcolor()
+    // {
 
-        $colors = Ad::join('industries', 'industries.id', 'ads.industry_id')
-        ->rightjoin('colors', 'colors.id', 'ads.color_id')
-            ->Select('ads.color_id', DB::raw('count(*) *100 /(select count(*) from ads) as total'), 'colors.colorname')
-            ->groupBy('color_id', 'colorname')
-            ->get();
-
-
-        // dd($colors);
-        return view('ads.allcolor',compact('colors'));
-    }
+    //     $colors = Ad::join('industries', 'industries.id', 'ads.industry_id')
+    //     ->rightjoin('colors', 'colors.id', 'ads.color_id')
+    //         ->Select('ads.color_id', DB::raw('count(*) *100 /(select count(*) from ads) as total'), 'colors.colorname')
+    //         ->groupBy('color_id', 'colorname')
+    //         ->get();
 
 
-    public function industrycolor($id)
-    {
-        $industryid = Industry::where('id', $id)->firstorFail();
-
-        $int = Industry::orderBy('industryname', 'ASC')->get();
-
-        session()->put('industryname', $industryid->id);
-
-        $intantype = Ad::join('industries', 'industries.id', 'ads.industry_id')
-        ->rightjoin('colors', 'colors.id', 'ads.color_id')
-        ->where('ads.industry_id', $id)
-            ->Select('ads.color_id', DB::raw('count(*) *100 /(select count(*) from ads where ads.industry_id = industries.id) as total'), 'colors.colorname', 'industryname')
-            ->groupBy('color_id', 'industry_id', 'industries.id', 'colorname', 'industryname')
-            ->get();
-
-        return view('ads.industrycolor', compact('industryid', 'int', 'intantype'));
+    //     // dd($colors);
+    //     return view('ads.allcolor',compact('colors'));
+    // }
 
 
-    }
+    // public function industrycolor($id)
+    // {
+    //     $industryid = Industry::where('id', $id)->firstorFail();
+
+    //     $int = Industry::orderBy('industryname', 'ASC')->get();
+
+    //     session()->put('industryname', $industryid->id);
+
+    //     $intantype = Ad::join('industries', 'industries.id', 'ads.industry_id')
+    //     ->rightjoin('colors', 'colors.id', 'ads.color_id')
+    //     ->where('ads.industry_id', $id)
+    //         ->Select('ads.color_id', DB::raw('count(*) *100 /(select count(*) from ads where ads.industry_id = industries.id) as total'), 'colors.colorname', 'industryname')
+    //         ->groupBy('color_id', 'industry_id', 'industries.id', 'colorname', 'industryname')
+    //         ->get();
+
+    //     return view('ads.industrycolor', compact('industryid', 'int', 'intantype'));
+
+
+    // }
 
     public function allsocial()
     {

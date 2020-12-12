@@ -144,6 +144,8 @@
 </style>
 
   <h4 class="text-center">Advertisement Database</h4>    
+    <h6 class="text-center"> <i>(Grow your business, View competitors Advertisements)</i> </h6>    
+
     
     <div class="container">
        <div class="row">
@@ -151,21 +153,23 @@
             <table id="example" class="table table-bordered  display nowrap" cellspacing="0" width="100%">
                 <thead>
                     <tr>
-                        <th>Image</th>
                         <th>Company</th>
+                        <th> Image</th>
                         {{-- <th>Text</th> --}}
                         <th>Industry</th>
-                        <th>Target Audience</th>
-                        <th>Ad Type</th>
+                        <th> Target Audience <i class="fab fa-facebook-square"></i></th>
+                        <th>Advertisement Type</th>
                         <th>Percentage Off</th>
                         <th>Social Media</th>
+
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($ads as $ad)
                     <tr>
-                        <td> <img  src="/images/{{$ad->image}}" height="100px" width="100px" alt=""> </td>
                         <td> <span style="font-weight: bold;">{{$ad->company}}</span></td>
+                        
+                        <td> <img class="data-image-table" data-lightbox="/images/{{$ad->image}}"  id="data-image"  src="/images/{{$ad->image}}" height="100px" width="100px" alt=""> </td>
                         {{-- <td>{{$ad->primary}}</td> --}}
 
                         <td style="font-weight: bold">{{$ad->industry->industryname}}</td>
@@ -179,7 +183,7 @@
 
 
 
-                        <td>{{$ad->adtypename}}</td>
+                        <td style="font-weight: bold;">{{$ad->adtypename}}</td>
 
                     @if(is_null($ad->percentage_id))
                         <td> <span class="span-percentage-na">N/A</span></td>
@@ -204,20 +208,20 @@
                          <td> <span class="span-media">{{$ad->socialmedia}} </span> </td>
                         @endif
 
+
                     </tr>
                     @endforeach
                 </tbody>
                 <tfoot>
                     <tr>
-                          <th>Image</th>
                         <th>Company</th>
+                        <th>Image</th>
                         {{-- <th>Text</th> --}}
                         <th>Industry</th>
-                        <th>Target Audience</th>
+                        <th> Target Audience <i class="fab fa-facebook-square"></i></th>
                         <th>Ad Type</th>
                         <th>Percentage Off</th>
                         <th>Social Media</th>
-
 
                     </tr>
                 </tfoot>
@@ -227,15 +231,25 @@
        </div> 
     </div>
 
+
+
     {{-- <livewire:ad-table> --}}
 @endsection
 
 
 @section('javascripts')
-
+{{-- 
 <script>
+    $(document).ready(function(){    
+   $("img").click(function(){    
+        $("img").animate({height: "300px"});
+    });
+});
+
+</script> --}}
 
 
-</script>
+
+
 
 @endsection

@@ -21,7 +21,6 @@ class CreateAdsTable extends Migration
             $table->integer('adtype_id')->unsigned();
             $table->integer('percentage_id')->nullable();
             $table->integer('industry_id')->unsigned();
-            $table->integer('color_id')->unsigned();
             $table->integer('social_id')->unsigned();
 
             $table->timestamps();

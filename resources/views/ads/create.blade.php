@@ -22,7 +22,7 @@
                 {{-- <a href="{{route('gender.create')}}" class="list-group-item">Gender</a> --}}
                 <a href="{{route('percentage.create')}}" class="list-group-item">Create Percentage</a>
                  <a href="{{route('social.create')}}" class="list-group-item">Create Social Media</a>
-                 <a href="{{route('color.create')}}" class="list-group-item">Create Color</a>
+                 {{-- <a href="{{route('color.create')}}" class="list-group-item">Create Color</a> --}}
 
 
              </div>
@@ -59,17 +59,6 @@
                             <option value=""></option>
                             @foreach($percentages as $percentage)
                            <option value="{{ $percentage->id }}">{{ $percentage->percentnumber }}</option>
-                             @endforeach
-                             </select>
-                         </div>
-
-                         
-                         <div class="form-group">
-                             <label for="">Colors</label>
-                             <select class="form-control" name="color_id">
-                            <option value=""></option>
-                            @foreach($colors as $color)
-                           <option value="{{ $color->id }}">{{ $color->colorname }}</option>
                              @endforeach
                              </select>
                          </div>

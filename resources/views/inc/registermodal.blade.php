@@ -1,12 +1,29 @@
-@extends('layouts.app')
-@section('content')
-<div class="container" style="margin-top: 98px;">
-<h4 style="text-align: center; padding-bottom:30px; color: #5161ce; font-family: 'Lobster', cursive;">Adsionary</h4>
 
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+@if(auth::user() )
 
-                    <form method="POST" action="{{ route('register') }}">
+@else
+<div class="modal fade-scale " id="overlay">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+       <img src="/vouch.png" alt="logo" height="24px">
+       <a href="/login" style="margin-left: 20%;"> Sign In</a>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+         <div class="welcome-title-vouch" style="padding-top:8px; padding-bottom:8px; background:mistyrose;">
+                  <h4 style="text-align:center; font-style:italic; color:#B35464">Register your Business to Voucheryhub Marketplace</h4>
+            <h5 style="color:#B35464;text-align:center; font-weight:bold;">Earn extra money you can put back into your business</h5>
+             <h5 style="color:#B35464;text-align:center; font-weight:bold;">Expose your business to our 1000+ Customers!</h5>
+            <h5 style="color:#B35464;text-align:center; font-weight:bold;">Grow an audience!</h5>
+
+
+          </div>
+      <div class="modal-body">
+       
+        <section class="merchant-newsletter">
+              <form method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -72,7 +89,14 @@
 
                         </div>
                     </form>
-        </div>
+
+        </section>
+
+         
+        
+      </div>
     </div>
+  </div>
 </div>
-@endsection
+@endif
+

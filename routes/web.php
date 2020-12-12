@@ -21,19 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/create/color', [App\Http\Controllers\ColorsController::class, 'create'])->name('color.create');
-Route::post('/create/color', [App\Http\Controllers\ColorsController::class, 'store'])->name('color.store');
 
-Route::get('/create/socialmedia', [App\Http\Controllers\SocialsController::class, 'create'])->name('social.create');
-Route::post('/create/socialmedia', [App\Http\Controllers\SocialsController::class, 'store'])->name('social.store');
-
-Route::get('/create/percentage', [App\Http\Controllers\PercentageController::class, 'create'])->name('percentage.create');
-Route::post('/create/percentage', [App\Http\Controllers\PercentageController::class, 'store'])->name('percentage.store');
-
-
-Route::get('/data/industry/color/all', [App\Http\Controllers\AdsController::class, 'allcolor']);
-
-Route::get('/data/industry/color/{id}', [App\Http\Controllers\AdsController::class, 'industrycolor']);
 
 Route::get('/data/industry/socialmedia/all', [App\Http\Controllers\AdsController::class, 'allsocial']);
 Route::get('/data/industry/socialmedia/{id}', [App\Http\Controllers\AdsController::class, 'industrysocial']);
@@ -49,17 +37,31 @@ Route::get('/data', [App\Http\Controllers\AdsController::class, 'allindustry'])-
 
 Route::get('/', [App\Http\Controllers\AdsController::class, 'index'])->name('dashboard');
 
-Route::get('/create/tags', [App\Http\Controllers\TagController::class, 'create'])->name('tag.create');
-Route::post('/create/tags', [App\Http\Controllers\TagController::class, 'store'])->name('tag.store');
-
-Route::get('/create/adtype', [App\Http\Controllers\AdtypesController::class, 'create'])->name('adtype.create');
-Route::post('/create/adtype', [App\Http\Controllers\AdtypesController::class, 'store'])->name('adtype.store');
-
-Route::get('/create/industries', [App\Http\Controllers\IndustryController::class, 'create'])->name('industry.create');
-Route::post('/create/industries', [App\Http\Controllers\IndustryController::class, 'store'])->name('industry.store');
 
 
-Route::get('/create', [App\Http\Controllers\AdsController::class, 'create'])->name('ad.create');
-Route::post('/create/ad', [App\Http\Controllers\AdsController::class, 'store'])->name('ad.store');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['prefix' => 'admin', 'middleware' => [ 'admin']], function () {
+
+    Route::get('/create/tags', [App\Http\Controllers\TagController::class, 'create'])->name('tag.create');
+    Route::post('/create/tags', [App\Http\Controllers\TagController::class, 'store'])->name('tag.store');
+
+    Route::get('/create/adtype', [App\Http\Controllers\AdtypesController::class, 'create'])->name('adtype.create');
+    Route::post('/create/adtype', [App\Http\Controllers\AdtypesController::class, 'store'])->name('adtype.store');
+
+    Route::get('/create/industries', [App\Http\Controllers\IndustryController::class, 'create'])->name('industry.create');
+    Route::post('/create/industries', [App\Http\Controllers\IndustryController::class, 'store'])->name('industry.store');
+
+    Route::get('/create/socialmedia', [App\Http\Controllers\SocialsController::class, 'create'])->name('social.create');
+    Route::post('/create/socialmedia', [App\Http\Controllers\SocialsController::class, 'store'])->name('social.store');
+
+    Route::get('/create/percentage', [App\Http\Controllers\PercentageController::class, 'create'])->name('percentage.create');
+    Route::post('/create/percentage', [App\Http\Controllers\PercentageController::class, 'store'])->name('percentage.store');
+
+
+
+    Route::get('/create', [App\Http\Controllers\AdsController::class, 'create'])->name('ad.create');
+    Route::post('/create/ad', [App\Http\Controllers\AdsController::class, 'store'])->name('ad.store');
+
+});
+

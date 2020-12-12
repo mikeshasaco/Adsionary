@@ -7,19 +7,10 @@
     <div class="row">
         <div class="col-md-3">
              <div class="list-group" style="margin-top:138px;">
-                 {{-- <a href="{{route('admin.dashboard')}}" class="list-group-item ">Dashboard</a>
-                <a href="{{route('aduser')}}" class="list-group-item ">Merchant</a>
-                <a href="{{route('adcustomer')}}" class="list-group-item ">Customer</a>
-                <a href="{{route('category.create')}}" class="list-group-item ">Create Category</a>
-                <a href="{{route('adproduct')}}" class="list-group-item ">Coupons</a>
-                <a href="{{route('subscription.payout')}}" class="list-group-item">Subscription Statistic</a>
-                <a href="{{route('gender.create')}}" class="list-group-item">Gender</a>
-                 <a href="{{route('adtype.create')}}" class="list-group-item">Create Ad Type</a>
- --}}
+  
                  <a href="{{route('ad.create')}}" class="list-group-item ">Create Advertisement</a>
                  <a href="{{route('adtype.create')}}" class="list-group-item">Create Advertisement Type</a>
                  <a href="{{route('percentage.create')}}" class="list-group-item">Create Percentage</a>
-                 <a href="{{route('color.create')}}" class="list-group-item">Create Color</a>
 
 
              </div>

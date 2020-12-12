@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Adsionary') }}</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
@@ -38,7 +38,6 @@
         {{-- <link href="{{ asset('css/mobilenavbar.css') }}" rel="stylesheet"> --}}
                 <link href="{{ asset('css/regularnavbar.css') }}" rel="stylesheet">
 
-        
 
 
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
@@ -55,12 +54,38 @@
         <style>
         .page-item.active .page-link{
         background-color: #5161ce;
-    border-color: #5161ce;
-
+       border-color: #5161ce;
 
 }
      a .pagelink{
         color: #5161ce;
+        
+    }
+
+    .form-control-login-register{
+     height: 3rem;
+    font-size: 16px;
+    font-weight: 400;
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+    .register-adsionary{
+    width: 100%;
+    height: 3rem;
+    font-size: 24px;
+    padding: 2px 0px 2px 0;
+     background-color: #5161ce;
+    color: white;
+    font-family: 'Lobster', cursive;
     }
     </style>
 
@@ -73,19 +98,21 @@
 
      @include('inc.regularnavbar')
 
-
+    {{-- @include('inc.datatablemodal') --}}
 
         <main class="py-4">
-
+          @include('inc.registermodal')
             @yield('content')
         </main>
     @livewireScripts
+{{-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> --}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
 
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> --}}
+    {{-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> --}}
     {{-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> --}}
             
     <!--   Datatables-->
@@ -94,7 +121,15 @@
     <!-- extension responsive -->
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
 
-  
+
+
+    <script>
+      $('#overlay').modal('show');
+
+
+    </script>
+
+
 <script>
     // ---------Responsive-navbar-active-animation-----------
 // function test(){
@@ -177,17 +212,22 @@
     function analytics_socialmedia()
     {
             localStorage.setItem('active', 'analytics_socialmedia');
-            window.location.href = window.location.origin + '/data';
-    }
-    function analytics_color()
-    {
-            localStorage.setItem('active', 'analytics_color');
-            window.location.href = window.location.origin + '/data';
+            window.location.href = window.location.origin + '/data/industry/socialmedia/all';
     }
     function analytics_percentage()
     {
             localStorage.setItem('active', 'analytics_percentage');
-            window.location.href = window.location.origin + '/data';
+            window.location.href = window.location.origin + '/data/industry/percentage/all';
+    }
+      function loginnav()
+    {
+            localStorage.setItem('active', 'login_nav');
+            window.location.href = window.location.origin + '/login';
+    }
+      function registernav()
+    {
+            localStorage.setItem('active', 'register_nav');
+            window.location.href = window.location.origin + '/register';
     }
 </script>
 
@@ -201,6 +241,8 @@
     });
 
 });</script>
+
+
       
 	@yield('javascripts')
 
