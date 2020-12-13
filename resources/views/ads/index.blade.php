@@ -279,6 +279,21 @@
     vertical-align: baseline;
     border-radius: .25rem;
     }
+
+       
+               .span-company{
+    color: #fff;
+    background-color: #5161ce;
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 90%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    }
    
 </style>
 
@@ -294,28 +309,24 @@
             <table id="example" class="table table-bordered  display nowrap" cellspacing="0" width="100%">
                 <thead>
                     <tr>
-                        <th>Company Name:</th>
-                        <th> Advertisement Image:</th>
-                        {{-- <th>Text</th> --}}
-                        <th>Industry:</th>
-                        <th> Target Audience:</th>
+                        <th>Company Name: </th>           
+                         <th>Advertisement Image: </th>
+                        <th>Industry: </th>
+                        <th> Target Audience: </th>
                         <th>Advertisement Type:</th>
-                        <th>Percentage Off:</th>
-                        <th>Social Media:</th>
-
+                        <th>Percentage Off: </th>
+                        <th>Social Media: </th>
 
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($ads as $ad)
                     <tr>
-                        <td> <span style="font-weight: bold;">{{$ad->company}}</span></td>
-                        {{-- <td> <img class="data-image-table"   id="data-image"  src="/images/{{$ad->image}}" height="100px" width="100px" alt=""> </td> --}}
+                        <td> <span class="span-company">{{$ad->company}}</span></td>
+
                          <td> <img class="data-image-table"   id="data-image"  src="https://vouch.sfo2.digitaloceanspaces.com/home/forge/adsionary.com/storage/app/public/Adsionary/{{$ad->image}}" height="100px" width="100px" alt=""> </td>
 
-                        {{-- <td>{{$ad->primary}}</td> --}}
-
-                        @if($ad->industry_id == 1)
+                         @if($ad->industry_id == 1)
                         <td> <span class="industry-test1">{{$ad->industry->industryname}}</span> </td>
                         @elseif($ad->industry_id == 2)
                         <td> <span class="industry-test2">{{$ad->industry->industryname}}</span> </td>
@@ -327,6 +338,7 @@
                          <td> <span class="industry-test5">{{$ad->industry->industryname}}</span> </td>
                          @endif
 
+                         
                         <td>
                              @foreach($ad->tags as $tag)
                              
@@ -334,6 +346,14 @@
                         <br>
                           @endforeach
                         </td>
+
+
+                        {{-- <td> <img class="data-image-table"   id="data-image"  src="/images/{{$ad->image}}" height="100px" width="100px" alt=""> </td> --}}
+
+                        {{-- <td>{{$ad->primary}}</td> --}}
+
+                     
+
 
 
                         @if($ad->adtype_id == 1)
@@ -374,21 +394,18 @@
                      @else
                          <td> <span class="span-media">{{$ad->socialmedia}} </span> </td>
                         @endif
-
                     </tr>
                     @endforeach
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th>Company Name</th>
-                        <th>Advertisement Image</th>
-                        {{-- <th>Text</th> --}}
-                        <th>Industry</th>
-                        <th> Target Audience</th>
-                        <th>Advertisement Type</th>
-                        <th>Percentage Off</th>
-                        <th>Social Media</th>
-
+                        <th>Company Name: </th>           
+                         <th>Advertisement Image: </th>
+                        <th>Industry: </th>
+                        <th> Target Audience: </th>
+                        <th>Advertisement Type:</th>
+                        <th>Percentage Off: </th>
+                        <th>Social Media: </th>
                     </tr>
                 </tfoot>
             </table>  
