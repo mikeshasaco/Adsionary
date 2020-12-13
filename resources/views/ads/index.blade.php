@@ -168,7 +168,6 @@
                     @foreach($ads as $ad)
                     <tr>
                         <td> <span style="font-weight: bold;">{{$ad->company}}</span></td>
-                               <a href="{{$photo->weblink}}" target="_blank"> 
 
                         {{-- <td> <img class="data-image-table"   id="data-image"  src="/images/{{$ad->image}}" height="100px" width="100px" alt=""> </td> --}}
                          <td> <img class="data-image-table"   id="data-image"  src="https://vouch.sfo2.digitaloceanspaces.com/home/forge/adsionary.com/storage/app/public/dataimage/{{$ad->image}}" height="100px" width="100px" alt="advertisement image"> </td>
