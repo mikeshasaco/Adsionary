@@ -8,7 +8,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Adsionary') }}</title>
+    {{-- <title>{{ config('app.name', 'Adsionary') }}</title> --}}
+    <title>Adsionary: Advertisement Database</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
@@ -93,12 +94,10 @@
 <body>
     <div id="app">
 
-    {{-- @include('inc.navbar')
-    @include('inc.mobilenavbar')  --}}
+ 
 
      @include('inc.regularnavbar')
 
-    {{-- @include('inc.datatablemodal') --}}
 
         <main class="py-4">
           @include('inc.registermodal')

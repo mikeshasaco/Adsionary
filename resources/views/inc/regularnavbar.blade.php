@@ -20,6 +20,9 @@
                     <a class="nav-link" href="javascript:void(0);" onclick="analytics_percentage();return false;"><i class="far fa-chart-bar"></i>Analytics by Percentage</a>
                 </li>
                 
+                @if(Auth::user())
+
+                @else
                 <li class="nav-item register_nav">
                     <a class="nav-link" href="javascript:void(0);" onclick="registernav();return false;">Register</a>
                 </li>
@@ -27,9 +30,8 @@
                 <li class="nav-item login_nav">
                     <a class="nav-link" href="javascript:void(0);" onclick="loginnav();return false;">Login</a>
                 </li>
-                {{-- <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0);"><i class="far fa-copy"></i>Documents</a>
-                </li> --}}
+                @endif
+          
             </ul>
         </div>
     </nav>
