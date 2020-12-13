@@ -12,7 +12,7 @@ use App\Models\Industry;
 use App\Models\Tag;
 use App\Models\Percentage;
 use App\Models\Social;
-use App\Models\Color;
+use Illuminate\Support\Facades\Storage;
 class AdsController extends Controller
 {
     public function create()
@@ -44,16 +44,23 @@ class AdsController extends Controller
         $ad->industry_id = $request->industry_id;
         $ad->percentage_id = $request->percentage_id;
         $ad->social_id = $request->social_id;
-       
-
 
         if ($request->hasFile('image')) {
+
             $image = $request->file('image');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            $location = public_path('/images/' . $filename);
-            Image::make($image)->save($location);
+            $filename = 'dataimage/' . time() . '.' . $image->getClientOriginalExtension();
+            $o = Image::make($image)->orientate();
+            $path = Storage::disk('do')->put('Adsionary/' . $filename, $o->encode());
             $ad->image = $filename;
         }
+
+        // if ($request->hasFile('image')) {
+        //     $image = $request->file('image');
+        //     $filename = time() . '.' . $image->getClientOriginalExtension();
+        //     $location = public_path('/images/' . $filename);
+        //     Image::make($image)->save($location);
+        //     $ad->image = $filename;
+        // }
 
         $ad->save();
 

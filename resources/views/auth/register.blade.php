@@ -38,7 +38,7 @@
                         <div class="form-group row">
 
                             <div class="col-md-12">
-                                <input id="password" placeholder="Enter a Email" type="password" class="form-control-login-register @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" placeholder="Enter Password" type="password" class="form-control-login-register @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
