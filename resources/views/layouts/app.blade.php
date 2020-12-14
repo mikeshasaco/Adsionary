@@ -9,7 +9,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{-- <title>{{ config('app.name', 'Adsionary') }}</title> --}}
-    <title>Adsionary: Advertisement Database</title>
+    <title>Database Analytics for Advertisements</title>
+    <meta class="description" content="">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">

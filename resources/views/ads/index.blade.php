@@ -310,7 +310,7 @@
                 <thead>
                     <tr>
                         <th>Company Name: </th>           
-                         <th>Advertisement Image: </th>
+                         <th>Image: </th>
                         <th>Industry: </th>
                         <th> Target Audience: </th>
                         <th>Advertisement Type:</th>
@@ -400,7 +400,7 @@
                 <tfoot>
                     <tr>
                         <th>Company Name: </th>           
-                         <th>Advertisement Image: </th>
+                         <th> Image: </th>
                         <th>Industry: </th>
                         <th> Target Audience: </th>
                         <th>Advertisement Type:</th>
