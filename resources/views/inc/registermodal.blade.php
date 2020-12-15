@@ -6,17 +6,20 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-       <img src="/vouch.png" alt="logo" height="24px">
+          <h6 style="font-family: 'Lobster', cursive; color:#5161ce">Adsionary</h6>
        <a href="/login" style="margin-left: 20%;"> Sign In</a>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-         <div class="welcome-title-vouch" style="padding-top:8px; padding-bottom:8px; background:mistyrose;">
-                  <h4 style="text-align:center; font-style:italic; color:#B35464">Register your Business to Voucheryhub Marketplace</h4>
+         <div class="welcome-title-vouch" style="padding-top:8px; padding-bottom:8px;">
+                  {{-- <h4 style="text-align:center; font-style:italic; color:#B35464">Register your Business to Voucheryhub Marketplace</h4>
             <h5 style="color:#B35464;text-align:center; font-weight:bold;">Earn extra money you can put back into your business</h5>
              <h5 style="color:#B35464;text-align:center; font-weight:bold;">Expose your business to our 1000+ Customers!</h5>
-            <h5 style="color:#B35464;text-align:center; font-weight:bold;">Grow an audience!</h5>
+            <h5 style="color:#B35464;text-align:center; font-weight:bold;">Grow an audience!</h5> --}}
+            
+            <h6 style="color: #5161ce">Register to gain free access to Data Analytics</h6>
+            <h6></h6>
 
 
           </div>
