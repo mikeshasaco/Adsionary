@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,18 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 
+// Route::get('/auth/redirect', function () {
+//     return Socialite::driver('github')->redirect();
+// });
+
+// Route::get('/auth/callback', function () {
+//     $user = Socialite::driver('github')->user();
+
+//     // $user->token
+// });
+
+Route::get('login/google', [App\Http\Controllers\Auth\LoginController::class, 'redirectToGoogle'])->name('login.google');
+Route::get('login/google/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleGoogleCallback']);
 
 Route::get('/data/industry/socialmedia/all', [App\Http\Controllers\AdsController::class, 'allsocial']);
 Route::get('/data/industry/socialmedia/{id}', [App\Http\Controllers\AdsController::class, 'industrysocial']);

@@ -9,6 +9,12 @@
 
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
+                        <div class="form-group row">
+                            <div class="col-md-6 offset-md-3">
+                                <a href="{{route('login.google')}}">Sign in Google</a>
+                                
+                            </div>
+                        </div>
 
                         <div class="form-group row">
 
