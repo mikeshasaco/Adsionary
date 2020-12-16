@@ -323,6 +323,7 @@
                     @foreach($ads as $ad)
                     <tr>
                         <td> <span class="span-company">{{$ad->company}}</span></td>
+                         <td> <img class="data-image-table"   id="data-image"  src="s3://adsionary/Adsionary/dataimage/{{$ad->image}}" height="100px" width="100px" alt=""> </td>
                         <td> <img class="data-image-table"   id="data-image"  src="/images/{{$ad->image}}" height="100px" width="100px" alt=""> </td>
 
                          {{-- <td> <img class="data-image-table"   id="data-image"  src="https://vouch.sfo2.digitaloceanspaces.com/home/forge/adsionary.com/storage/app/public/Adsionary/{{$ad->image}}" height="100px" width="100px" alt=""> </td> --}}
