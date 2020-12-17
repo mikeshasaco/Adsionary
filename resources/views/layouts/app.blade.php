@@ -62,6 +62,59 @@
     @yield('styles')
         @livewireStyles    
         <style>
+.google-center{
+    display: flex;
+    justify-content: center;
+}
+
+.google-btn {
+  width: 210px;
+  height: 42px;
+  background-color: #4285f4;
+  border-radius: 2px;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
+  margin-top: -13px;
+
+
+
+}
+
+/* @import url(https://fonts.googleapis.com/css?family=Roboto:500); */
+
+.google-btn  .google-icon-wrapper {
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 1px;
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    background-color: #fff;;
+  }
+
+  .google-btn   .google-icon {
+    position: absolute;
+    margin-top: 11px;
+    margin-left: 11px;
+    width: 18px;
+    height: 18px;
+  }
+  .google-btn   .btn-text {
+    float: right;
+    margin: 11px 11px 0 0;
+    color: #fff;;
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    font-family: "Roboto";
+  }
+
+  .btn-text:hover {
+    box-shadow: 0 0 6px #4285f4;
+  }
+  
+  .btn-text:active {
+    background:  #1669F2;;
+  }
+
         .page-item.active .page-link{
         background-color: #5161ce;
        border-color: #5161ce;
@@ -109,7 +162,6 @@
 
 
         <main class="py-4">
-          @include('inc.registermodal')
             @yield('content')
         </main>
     @livewireScripts

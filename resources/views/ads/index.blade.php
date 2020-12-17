@@ -416,6 +416,7 @@
        </div> 
     </div>
 
+          @include('inc.registermodal')
 
 
     {{-- <livewire:ad-table> --}}

@@ -20,16 +20,29 @@
                     <a class="nav-link" href="javascript:void(0);" onclick="analytics_percentage();return false;"><i class="far fa-chart-bar"></i>Analytics by Percentage</a>
                 </li>
                 
-                @if(Auth::user())
+             @if(!auth()->guard('web')->check())
 
-                @else
-                <li class="nav-item register_nav">
+                 <li class="nav-item register_nav">
                     <a class="nav-link" href="javascript:void(0);" onclick="registernav();return false;">Register</a>
                 </li>
                 
                 <li class="nav-item login_nav">
                     <a class="nav-link" href="javascript:void(0);" onclick="loginnav();return false;">Login</a>
                 </li>
+
+                @else
+
+                   <li class="nav-item">
+                  <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+                     </a>
+                </li>
+   
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
+            
                 @endif
           
             </ul>

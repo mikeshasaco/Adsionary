@@ -12,19 +12,40 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      
+        
+       
          <div class="welcome-title-vouch" style="padding-top:8px; padding-bottom:8px;">
                   {{-- <h4 style="text-align:center; font-style:italic; color:#B35464">Register your Business to Voucheryhub Marketplace</h4>
             <h5 style="color:#B35464;text-align:center; font-weight:bold;">Earn extra money you can put back into your business</h5>
              <h5 style="color:#B35464;text-align:center; font-weight:bold;">Expose your business to our 1000+ Customers!</h5>
             <h5 style="color:#B35464;text-align:center; font-weight:bold;">Grow an audience!</h5> --}}
             
-            <h6 style="color: #5161ce">Register to gain free access to Data Analytics</h6>
-            <h6></h6>
+            <h6 style="color: #5161ce;text-align:center; font-weight:bold;">Register to gain FREE access to Social Media Ads Analytics</h6>
+            <h6 style="color: #5161ce;text-align:center; font-weight:bold;">Gain access to best advertisement strategies for your industry</h6>
+            <h6 style="color: #5161ce;text-align:center; font-weight:bold;">Receive monthly updates sent to your Email for Free </h6>
 
+           
 
           </div>
       <div class="modal-body">
-       
+
+        <div style="display: flex; justify-content:center;">
+                        <div class="google-btn">
+                            <div class="google-icon-wrapper">
+                                <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+                            </div>
+                             <a class="btn-text" href="{{route('login.google')}}">Sign in Google</a>
+                            </p>
+                         </div>
+                    </div>
+              </div>
+          <div class="separator-or" style="display: flex; justify-content: center; padding-top:10px; padding-bottom:10px;">
+                        <p style="color: #5161ce; font-family: 'Lobster', cursive;">or</p>
+                            {{-- <span style=""></span> --}}
+
+                        </div>
+          
         <section class="merchant-newsletter">
               <form method="POST" action="{{ route('register') }}">
                         @csrf
@@ -83,14 +104,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-12 m-auto" style="width: fit-content">
-                            <label for="Sign-up" style="font-weight: 800">Do you have an Account?</label>
-                            <div class="m-auto" style="width: fit-content">
-                                <a href="{{ route('login') }}">Login</a>
-
-                            </div>
-
-                        </div>
+                    
                     </form>
 
         </section>
