@@ -421,7 +421,7 @@
                     @foreach($ads as $ad)
                       <div id="myModal" class="modal-image">
                             <span class="close-modal"> &times;</span>
-                            <img class="modal-content-image" alt="{{$ad->primary}}"   id="data-image"  src="/images/{{$ad->image}}" alt=""> 
+                            <img class="modal-content-image" alt="{{$ad->primary}}"   id="data-image" src="https://adsionary.s3.us-east-2.amazonaws.com/Adsionary/{{$ad->image}}" > 
                             <div id="caption"></div>
                         </div>
                     <tr>
