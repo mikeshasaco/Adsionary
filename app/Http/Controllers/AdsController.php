@@ -45,22 +45,22 @@ class AdsController extends Controller
         $ad->percentage_id = $request->percentage_id;
         $ad->social_id = $request->social_id;
 
-        // if ($request->hasFile('image')) {
-
-        //     $image = $request->file('image');
-        //     $filename = 'dataimage/' . time() . '.' . $image->getClientOriginalExtension();
-        //     $o = Image::make($image)->orientate();
-        //     $path = Storage::disk('s3')->put('Adsionary/' . $filename, $o->encode());
-        //     $ad->image = $filename;
-        // }
-
         if ($request->hasFile('image')) {
+
             $image = $request->file('image');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            $location = public_path('/images/' . $filename);
-            Image::make($image)->save($location);
+            $filename = 'dataimage/' . time() . '.' . $image->getClientOriginalExtension();
+            $o = Image::make($image)->orientate();
+            $path = Storage::disk('s3')->put('Adsionary/' . $filename, $o->encode());
             $ad->image = $filename;
         }
+
+        // if ($request->hasFile('image')) {
+        //     $image = $request->file('image');
+        //     $filename = time() . '.' . $image->getClientOriginalExtension();
+        //     $location = public_path('/images/' . $filename);
+        //     Image::make($image)->save($location);
+        //     $ad->image = $filename;
+        // }
 
         $ad->save();
 
