@@ -95,7 +95,7 @@
     <div class="row">
              <div class="col-md-12 col-sm-12">
 
-                    <h4 style="text-align: center" >Most used Advertisement Types for the <b>{{ $industryid->industryname }}</b> Industry According our Database  </h4>
+                    <h4 style="text-align: center" >Most used Advertisement Types for the <b>{{ $industryid->industryname }}</b> According our Database  </h4>
                                         
                     <select name="record"   class="media-select">
                         @foreach($int as $categoryselect)
