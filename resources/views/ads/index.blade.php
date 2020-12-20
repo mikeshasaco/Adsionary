@@ -419,24 +419,24 @@
                 </thead>
                 <tbody>
                     @foreach($ads as $ad)
-                      <div id="myModal" class="modal-image">
+                      {{-- <div id="myModal" class="modal-image">
                             <span class="close-modal"> &times;</span>
                             <img class="modal-content-image" alt="{{$ad->primary}}"   id="data-image" src="https://adsionary.s3.us-east-2.amazonaws.com/Adsionary/{{$ad->image}}" > 
                             <div id="caption"></div>
-                        </div>
-                           {{-- <div id="myModal" class="modal-image">
+                        </div> --}}
+                           <div id="myModal" class="modal-image">
                             <span class="close-modal"> &times;</span>
                             <img class="modal-content-image" alt="{{$ad->primary}}"   id="data-image" src="/images/{{$ad->image}}" > 
                             <div id="caption"></div>
-                        </div> --}}
+                        </div>
                     <tr>
                         <td> <span class="span-company">{{$ad->company}}</span></td>
-                         <td> 
+                         {{-- <td> 
                              <img id="myImg"  src="https://adsionary.s3.us-east-2.amazonaws.com/Adsionary/{{$ad->image}}" style="width:100px; height:120px;" alt="{{$ad->primary}}">
-                             </td>
-                        {{-- <td> 
+                             </td> --}}
+                        <td> 
                         <img id="myImg" src="/images/{{$ad->image}}" alt="{{$ad->primary}}" style="width:100px; height:120px;">
-                        </td> --}}
+                        </td>
 
                          {{-- <td> <img class="data-image-table"   id="data-image"  src="https://vouch.sfo2.digitaloceanspaces.com/home/forge/adsionary.com/storage/app/public/Adsionary/{{$ad->image}}" height="100px" width="100px" alt=""> </td> --}}
 
@@ -546,28 +546,7 @@
 
 </script> --}}
 
-<script>
-// Get the modal
-var modal = document.getElementById("myModal");
 
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById("myImg");
-var modalImg = document.getElementById("data-image");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close-modal")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-  modal.style.display = "none";
-}
-</script>
 
 
 
