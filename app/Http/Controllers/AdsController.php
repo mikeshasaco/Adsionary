@@ -126,9 +126,9 @@ class AdsController extends Controller
     {
         $percent =
         Ad::join('industries', 'industries.id', 'ads.industry_id')
-        ->rightjoin('percentages', 'percentages.id', 'ads.percentage_id')
+        ->leftjoin('percentages', 'percentages.id', 'ads.percentage_id')
         ->Select('ads.percentage_id', DB::raw('count(*) *100 /(select count(*) from ads) as total'), 'percentages.percentnumber')
-        ->groupBy('percentage_id', 'percentnumber')
+        ->groupBy( 'percentnumber','percentage_id')
         ->get();
 
         // dd($industry);
