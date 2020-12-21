@@ -47,7 +47,7 @@ Route::get('/data/industry/percentage/{id}', [App\Http\Controllers\AdsController
 Route::get('/data/{id}', [App\Http\Controllers\AdsController::class, 'industrydata']);
 Route::get('/data', [App\Http\Controllers\AdsController::class, 'allindustry'])->name('allindustry');
 
-Route::get('/conversions', [App\Http\Controllers\AdsController::class, 'conversions']);
+Route::get('/conversions', [App\Http\Controllers\AdsController::class, 'conversions'])->name('conversions');
 
 Route::get('/', [App\Http\Controllers\AdsController::class, 'index'])->name('dashboard');
 
