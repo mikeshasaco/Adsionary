@@ -54,8 +54,9 @@ class LoginController extends Controller
         $user = Socialite::driver('google')->user();
 
         $this->_registerOrLoginUser($user);
+        return '/conversions';
 
-        return redirect()->route('dashboard');
+        // return redirect()->route('dashboard');
     }
 
     protected function _registerOrLoginUser($data)

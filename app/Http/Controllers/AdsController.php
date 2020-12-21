@@ -221,4 +221,9 @@ class AdsController extends Controller
 
     }
 
+    public function conversions()
+    {
+        return view('ads.conversions');
+    }
+
 }
