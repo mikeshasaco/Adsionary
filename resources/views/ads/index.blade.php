@@ -425,9 +425,14 @@
                          {{-- <td> 
                              <img id="myImg"  src="https://adsionary.s3.us-east-2.amazonaws.com/Adsionary/{{$ad->image}}" style="width:100px; height:120px;" alt="{{$ad->primary}}">
                              </td> --}}
-                        <td> 
+                        {{-- <td> 
                           <a href="/images/{{$ad->image}}" data-fancybox="/images/{{$ad->image}}" data-caption="{{$ad->primary}}">
                         <img id="" src="/images/{{$ad->image}}" alt="{{$ad->primary}}" style="width:100px; height:120px;"></a>
+                        </td> --}}
+
+                         <td> 
+                          <a href="https://vouch.sfo2.digitaloceanspaces.com/home/forge/adsionary.com/storage/app/public/Adsionary/{{$ad->image}}"  data-fancybox="{{$ad->image}}" data-caption="{{$ad->primary}}">
+                        <img id=""  src="https://vouch.sfo2.digitaloceanspaces.com/home/forge/adsionary.com/storage/app/public/Adsionary/{{$ad->image}}" alt="{{$ad->primary}}" style="width:100px; height:120px;"></a>
                         </td>
 
                          {{-- <td> <img class="data-image-table"   id="data-image"  src="https://vouch.sfo2.digitaloceanspaces.com/home/forge/adsionary.com/storage/app/public/Adsionary/{{$ad->image}}" height="100px" width="100px" alt=""> </td> --}}
