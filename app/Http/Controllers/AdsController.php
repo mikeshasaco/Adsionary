@@ -226,4 +226,9 @@ class AdsController extends Controller
         return view('ads.conversions');
     }
 
+    public function landingpage()
+    {
+        return view('ads.landingpage');
+    }
+
 }

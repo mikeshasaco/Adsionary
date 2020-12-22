@@ -60,16 +60,18 @@
 
 @section('content')
 <div class="container" style="margin-top: 70px;">
-<h4 style="text-align: center; padding-bottom:30px; color: #5161ce; font-family: 'Lobster', cursive;">Register</h4>
+<h4 style="text-align: center; padding-bottom:20px; color: #5161ce; font-family: 'Lobster', cursive;">Register</h4>
 
+     
+            <h6 style="color: #5161ce;text-align:center; font-weight:bold;">Register to gain FREE access to Social Media Ads Analytics</h6>
+            <h6 style="color: #5161ce;text-align:center; font-weight:bold;">Gain access to best Advertisement Analytics for your Industry</h6>
     <div class="row justify-content-center">
         <div class="col-md-8">
 
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-                         <div class="google-center">
-
+                     <div class="google-center" style="margin-top: 15px;">
                         <div class="google-btn">
                             <div class="google-icon-wrapper">
                                 <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>

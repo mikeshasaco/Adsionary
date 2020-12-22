@@ -49,6 +49,8 @@ Route::get('/data', [App\Http\Controllers\AdsController::class, 'allindustry'])-
 
 Route::get('/conversions', [App\Http\Controllers\AdsController::class, 'conversions'])->name('conversions');
 
+// Route::get('/landingpage', [App\Http\Controllers\AdsController::class, 'landingpage'])->name('landingpage');
+
 Route::get('/', [App\Http\Controllers\AdsController::class, 'index'])->name('dashboard');
 
 

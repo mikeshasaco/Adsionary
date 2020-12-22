@@ -526,7 +526,7 @@
        </div> 
     </div>
 
-          @include('inc.registermodal')
+          {{-- @include('inc.registermodal') --}}
 
 
 @endsection
