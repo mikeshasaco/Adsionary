@@ -19,6 +19,10 @@
                 <li class="nav-item analytics_percentage">
                     <a class="nav-link" href="javascript:void(0);" onclick="analytics_percentage();return false;"><i class="far fa-chart-bar"></i>Analytics by Percentage</a>
                 </li>
+
+                  <li class="nav-item analytics_audience">
+                    <a class="nav-link" href="javascript:void(0);" onclick="analytics_audience();return false;"><i class="far fa-chart-bar"></i>Analytics by Target Audience</a>
+                </li>
                 
              @if(!auth()->guard('web')->check())
 
@@ -29,6 +33,7 @@
                 <li class="nav-item login_nav">
                     <a class="nav-link" href="javascript:void(0);" onclick="loginnav();return false;">Login</a>
                 </li>
+                
 
                 @else
 

@@ -51,6 +51,9 @@ Route::get('/conversions', [App\Http\Controllers\AdsController::class, 'conversi
 
 // Route::get('/landingpage', [App\Http\Controllers\AdsController::class, 'landingpage'])->name('landingpage');
 
+Route::get('/target/audience/data', [App\Http\Controllers\AdsController::class, 'tagsaudience']);
+
+
 Route::get('/', [App\Http\Controllers\AdsController::class, 'index'])->name('dashboard');
 
 

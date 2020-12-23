@@ -45,22 +45,22 @@ class AdsController extends Controller
         $ad->percentage_id = $request->percentage_id;
         $ad->social_id = $request->social_id;
 
-        if ($request->hasFile('image')) {
-
-            $image = $request->file('image');
-            $filename = 'dataimage/' . time() . '.' . $image->getClientOriginalExtension();
-            $o = Image::make($image)->orientate();
-            $path = Storage::disk('s3')->put('Adsionary/' . $filename, $o->encode());
-            $ad->image = $filename;
-        }
-
         // if ($request->hasFile('image')) {
+
         //     $image = $request->file('image');
-        //     $filename = time() . '.' . $image->getClientOriginalExtension();
-        //     $location = public_path('/images/' . $filename);
-        //     Image::make($image)->save($location);
+        //     $filename = 'dataimage/' . time() . '.' . $image->getClientOriginalExtension();
+        //     $o = Image::make($image)->orientate();
+        //     $path = Storage::disk('s3')->put('Adsionary/' . $filename, $o->encode());
         //     $ad->image = $filename;
         // }
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $location = public_path('/images/' . $filename);
+            Image::make($image)->save($location);
+            $ad->image = $filename;
+        }
 
         $ad->save();
 
@@ -229,6 +229,19 @@ class AdsController extends Controller
     public function landingpage()
     {
         return view('ads.landingpage');
+    }
+
+    public function tagsaudience()
+    {
+        $adtag = DB::table('ad_tags')
+                ->join('tags', 'tags.id', 'ad_tags.tag_id')
+            ->join('ads', 'ads.id', 'ad_tags.ad_id')
+                ->select('tag_id', DB::raw('count(*) as total'),'tagname')
+                ->groupby('tag_id','tagname')
+                ->get();
+
+        //    dd($ad_tag); 
+        return view('ads.tags',compact('adtag'));
     }
 
 }
