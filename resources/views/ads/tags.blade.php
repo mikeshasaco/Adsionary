@@ -100,7 +100,7 @@
             
   <div class="skills" >
       @foreach($adtag as $type)
-      <div class="skill">
+      <div class="skill" style="padding-bottom: 35px;">
         <div class="skill-name"> <b>{{$type->tagname}}</b> was used <b> {{number_format($type->total,0)}}</b> time</div>
         <div class="skill-bar">
         <div class="skill-per" style="background-color: cadetblue" per="{{$type->total}}"></div>

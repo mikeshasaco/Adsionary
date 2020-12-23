@@ -239,7 +239,7 @@ class AdsController extends Controller
                 ->select('tag_id', DB::raw('count(*) as total'),'tagname')
                 ->groupby('tag_id','tagname')
                 ->orderBy('total','DESC')
-                ->paginate(15);
+                ->paginate(20);
         //    dd($ad_tag); 
         return view('ads.tags',compact('adtag'));
     }
