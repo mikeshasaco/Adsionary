@@ -94,7 +94,7 @@
 <div class="container">
     <div class="row">
              <div class="col-md-12 col-sm-12">
-                    <h4 style="text-align: center" >Most used Target Audience According to our Database </h4>
+                    <h4 style="text-align: center" >Top 20 most used Target Audience According to our Database </h4>
 
 
             
@@ -106,14 +106,9 @@
         <div class="skill-per" style="background-color: cadetblue" per="{{$type->total}}"></div>
         @endforeach
       </div>
-
-    
-
       
     </div>
-                    
-
-
+            
             </div>
 
     </div>
