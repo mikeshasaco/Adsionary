@@ -318,11 +318,11 @@ $(document).ready(function(){
             localStorage.setItem('active', 'register_nav');
             window.location.href = window.location.origin + '/register';
     }
-    function analytics_audience()
-    {
-            localStorage.setItem('active', '    analytics_audience');
-            window.location.href = window.location.origin + '/target/audience/data';
-    }
+    // function analytics_audience()
+    // {
+    //         localStorage.setItem('active', '    analytics_audience');
+    //         window.location.href = window.location.origin + '/target/audience/data';
+    // }
 
 </script>
 

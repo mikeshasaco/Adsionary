@@ -20,9 +20,9 @@
                     <a class="nav-link" href="javascript:void(0);" onclick="analytics_percentage();return false;"><i class="far fa-chart-bar"></i>Analytics by Percentage</a>
                 </li>
 
-                  <li class="nav-item analytics_audience">
+                  {{-- <li class="nav-item analytics_audience">
                     <a class="nav-link" href="javascript:void(0);" onclick="analytics_audience();return false;"><i class="far fa-chart-bar"></i>Analytics by Target Audience</a>
-                </li>
+                </li> --}}
                 
              @if(!auth()->guard('web')->check())
 

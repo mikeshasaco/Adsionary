@@ -78,6 +78,8 @@ class AdsController extends Controller
             ->select('ads.*', 'industries.industryname', 'adtypes.adtypename', 'percentages.percentnumber','socials.socialmedia')
             ->get();
 
+      
+
         // $ads = Ad::all();
             // dd($ads);
         return view('ads.index',compact('ads'));
@@ -226,22 +228,22 @@ class AdsController extends Controller
         return view('ads.conversions');
     }
 
-    public function landingpage()
-    {
-        return view('ads.landingpage');
-    }
+    // public function landingpage()
+    // {
+    //     return view('ads.landingpage');
+    // }
 
-    public function tagsaudience()
-    {
-        $adtag = DB::table('ad_tags')
-                ->join('tags', 'tags.id', 'ad_tags.tag_id')
-            ->join('ads', 'ads.id', 'ad_tags.ad_id')
-                ->select('tag_id', DB::raw('count(*) as total'),'tagname')
-                ->groupby('tag_id','tagname')
-                ->orderBy('total','DESC')
-                ->paginate(20);
-        //    dd($ad_tag); 
-        return view('ads.tags',compact('adtag'));
-    }
+    // public function tagsaudience()
+    // {
+    //     $adtag = DB::table('ad_tags')
+    //             ->join('tags', 'tags.id', 'ad_tags.tag_id')
+    //         ->join('ads', 'ads.id', 'ad_tags.ad_id')
+    //             ->select('tag_id', DB::raw('count(*) as total'),'tagname')
+    //             ->groupby('tag_id','tagname')
+    //             ->orderBy('total','DESC')
+    //             ->paginate(20);
+    //     //    dd($ad_tag); 
+    //     return view('ads.tags',compact('adtag'));
+    // }
 
 }
