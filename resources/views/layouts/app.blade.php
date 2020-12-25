@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+<meta property="fb:app_id" content="1567390816981872" />
 <meta property="og:title" content="	Database Analytics for Advertisements"/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://adsionary.com/"/>
