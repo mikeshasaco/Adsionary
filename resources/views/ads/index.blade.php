@@ -486,9 +486,9 @@
                         <td> <span class="span-percentage-na">N/A</span></td>
                         @else
                     @if($ad->percentnumber > 20)
-                     <td> <span class="span-percentage-high">{{$ad->percentnumber }}%</span> </td>
+                     <td> <span class="span-percentage-high">{{$ad->percentnumber }}</span> </td>
                     @else
-                          <td> <span class="span-percentage-low">{{$ad->percentnumber }}%</span> </td>
+                          <td> <span class="span-percentage-low">{{$ad->percentnumber }}</span> </td>
                           @endif
 
 
