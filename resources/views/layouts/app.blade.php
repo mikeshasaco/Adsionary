@@ -1,17 +1,20 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+<meta property="og:title" content="	Database Analytics for Advertisements"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://adsionary.com/"/>
+<meta property="og:image" content="https://adsionary.s3.us-east-2.amazonaws.com/Adsionary/dataimage/1608223773.jpg"/>
+<meta property="og:description" content="Database Analytics for Advertisements"/>
+
     <meta charset="utf-8">
-    <meta property="fb:app_id" content="1567390816981872" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, target-densityDpi=device-dpi" />
-        {{-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> --}}
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{-- <title>{{ config('app.name', 'Adsionary') }}</title> --}}
     <title>Database Analytics for Advertisements</title>
-    <meta class="description" content="">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
