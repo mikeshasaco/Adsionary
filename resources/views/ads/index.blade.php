@@ -431,10 +431,11 @@
                         </td> --}}
 
                          <td> 
-                          <a href="https://adsionary.s3.us-east-2.amazonaws.com/Adsionary/{{$ad->image}}"  data-fancybox="{{$ad->image}}" data-caption="{{$ad->primary}}">
+                          <a href="https://adsionary.s3.us-east-2.amazonaws.com/Adsionary/{{$ad->image}}"  data-fancybox="{{$ad->image}}" data-caption="">
                         <img id=""  src="https://adsionary.s3.us-east-2.amazonaws.com/Adsionary/{{$ad->image}}" style="width:100px; height:120px;"></a>
                          <h6 style="color:#5161ce; font-size: 13px; ">Click Enlarge</h6>
                         </td>
+                        {{-- {{$ad->primary}} --}}
 
                          {{-- <td> <img class="data-image-table"   id="data-image"  src="https://vouch.sfo2.digitaloceanspaces.com/home/forge/adsionary.com/storage/app/public/Adsionary/{{$ad->image}}" height="100px" width="100px" alt=""> </td> --}}
 
@@ -486,9 +487,9 @@
                         <td> <span class="span-percentage-na">N/A</span></td>
                         @else
                     @if($ad->percentnumber > 20)
-                     <td> <span class="span-percentage-high">{{$ad->percentnumber }}</span> </td>
+                     <td> <span class="span-percentage-high">{{$ad->percentnumber }}%</span> </td>
                     @else
-                          <td> <span class="span-percentage-low">{{$ad->percentnumber }}</span> </td>
+                          <td> <span class="span-percentage-low">{{$ad->percentnumber }}%</span> </td>
                           @endif
 
 
