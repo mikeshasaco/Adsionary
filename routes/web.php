@@ -60,7 +60,7 @@ Route::group(['middleware' => 'all'], function () {
     Route::get('/dashboard', [App\Http\Controllers\AdsController::class, 'index'])->name('dashboard');
 });
 
-Route::get('/', [App\Http\Controllers\AdsController::class, 'landingpage'])->name('landingpage');
+Route::get('/home', [App\Http\Controllers\AdsController::class, 'landingpage'])->name('landingpage');
 
 
 
