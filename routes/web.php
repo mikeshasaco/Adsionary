@@ -36,25 +36,31 @@ Auth::routes();
 Route::get('login/google', [App\Http\Controllers\Auth\LoginController::class, 'redirectToGoogle'])->name('login.google');
 Route::get('login/google/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleGoogleCallback']);
 
-Route::get('/data/industry/socialmedia/all', [App\Http\Controllers\AdsController::class, 'allsocial']);
-Route::get('/data/industry/socialmedia/{id}', [App\Http\Controllers\AdsController::class, 'industrysocial']);
 
 
-Route::get('/data/industry/percentage/all', [App\Http\Controllers\AdsController::class, 'allpercent']);
-Route::get('/data/industry/percentage/{id}', [App\Http\Controllers\AdsController::class, 'industrypercent']);
+Route::group(['middleware' => 'all'], function () {
+
+    Route::get('/data/industry/socialmedia/all', [App\Http\Controllers\AdsController::class, 'allsocial']);
+    Route::get('/data/industry/socialmedia/{id}', [App\Http\Controllers\AdsController::class, 'industrysocial']);
 
 
-Route::get('/data/{id}', [App\Http\Controllers\AdsController::class, 'industrydata']);
-Route::get('/data', [App\Http\Controllers\AdsController::class, 'allindustry'])->name('allindustry');
-
-Route::get('/conversions', [App\Http\Controllers\AdsController::class, 'conversions'])->name('conversions');
-
-// Route::get('/landingpage', [App\Http\Controllers\AdsController::class, 'landingpage'])->name('landingpage');
-
-// Route::get('/target/audience/data', [App\Http\Controllers\AdsController::class, 'tagsaudience']);
+    Route::get('/data/industry/percentage/all', [App\Http\Controllers\AdsController::class, 'allpercent']);
+    Route::get('/data/industry/percentage/{id}', [App\Http\Controllers\AdsController::class, 'industrypercent']);
 
 
-Route::get('/', [App\Http\Controllers\AdsController::class, 'index'])->name('dashboard');
+    Route::get('/data/{id}', [App\Http\Controllers\AdsController::class, 'industrydata']);
+    Route::get('/data', [App\Http\Controllers\AdsController::class, 'allindustry'])->name('allindustry');
+
+    Route::get('/conversions', [App\Http\Controllers\AdsController::class, 'conversions'])->name('conversions');
+
+
+    // Route::get('/target/audience/data', [App\Http\Controllers\AdsController::class, 'tagsaudience']);
+
+
+    Route::get('/dashboard', [App\Http\Controllers\AdsController::class, 'index'])->name('dashboard');
+});
+
+Route::get('/', [App\Http\Controllers\AdsController::class, 'landingpage'])->name('landingpage');
 
 
 

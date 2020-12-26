@@ -10,14 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
 
-    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+    {{-- <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
 	<meta property="og:site_name" content="adsionary" /> <!-- website name -->
 	<meta property="og:site" content="www.adsionary.com/home" /> <!-- website link -->
 	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
 	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
 	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
 	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
-	<meta property="og:type" content="article" />
+	<meta property="og:type" content="article" /> --}}
 
     <!-- Website Title -->
     <title>Database Analytics for Advertisements</title>
@@ -70,7 +70,7 @@
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href=" ">Marketplace <span class="sr-only">(current)</span></a>
+                        <a class="nav-link page-scroll" href=" {{route('dashboard')}}">Dashboard <span class="sr-only">(current)</span></a>
                     </li>
                     {{-- <li class="nav-item">
                         <a class="nav-link page-scroll" href="#features">FEATURES</a>
@@ -85,6 +85,9 @@
                         <a class="nav-link page-scroll" href="#pricing">PRICING</a>
                     </li> --}}
                 </ul>
+                   <span class="nav-item">
+                    <a class="btn-outline-sm" href="{{ route('login') }}">REGISTER</a>
+                </span>
                 <span class="nav-item">
                     <a class="btn-outline-sm" href="{{ route('login') }}">LOG IN</a>
                 </span>
@@ -99,18 +102,20 @@
         <div class="header-content">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 col-xl-5">
+                    <div class="col-lg-6 col-xl-5"> 
                         <div class="text-container">
-                            <h1 style="font-size: 3rem">Grow your business, while earning extra income monthly.</h1>
+                            <h1 style="font-size: 3rem">Improve your Business Advertisement conversion rate</h1>
                             {{-- <p class="p-large">Subscription base marketplace for online businesses to help earn extra income and expand</p> --}}
-                            <p class="p-large">Marketplace designed to connect small businesses with customers, while giving businesses an extra source on income.</p>
+                            <p class="p-large">The software tool that takes data from thousands of businesses and finds the best metrics to improve your business conversion rate using data.  <br> <b> All yours for FREE.</b>  </p>
                             <a class="btn-solid-lg page-scroll" href="">SIGN UP IS FREE</a>
+                             <a class="btn-solid-lg page-scroll" href="{{route('login.google')}}" style="margin-top: 10px;">Sign in with Google</a>
+
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
                     <div class="col-lg-6 col-xl-7">
                         <div class="image-container">
                             <div class="img-wrapper">
-                                <img class="img-fluid" src="images/header-software-app.png" alt="alternative">
+                                <img class="img-fluid" src="images/adsionarytb.png" alt="alternative">
                             </div> <!-- end of img-wrapper -->
                         </div> <!-- end of image-container -->
                     </div> <!-- end of col -->
@@ -122,44 +127,7 @@
     <!-- end of header -->
 
 
-    <!-- Customers -->
-    <div class="slider-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    
-                    <!-- Image Slider -->
-                    <div class="slider-container">
-                        <div class="swiper-container image-slider">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                        <img class="img-fluid" src="vouch.png" alt="alternative">
-                                </div>
-                                <div class="swiper-slide">
-                                        <img class="img-fluid" src="images/customer-logo-2.png" alt="alternative">
-                                </div>
-                                <div class="swiper-slide">
-                                        <img class="img-fluid" src="vouch.png" alt="alternative">
-                                </div>
-                                <div class="swiper-slide">
-                                        <img class="img-fluid" src="images/customer-logo-4.png" alt="alternative">
-                                </div>
-                                <div class="swiper-slide">
-                                        <img class="img-fluid" src="vouch.png" alt="alternative">
-                                </div>
-                                <div class="swiper-slide">
-                                        <img class="img-fluid" src="images/customer-logo-6.png" alt="alternative">
-                                </div>
-                            </div> <!-- end of swiper-wrapper -->
-                        </div> <!-- end of swiper container -->
-                    </div> <!-- end of slider-container -->
-                    <!-- end of image slider -->
 
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of slider-1 -->
-    <!-- end of customers -->
 
 
     <!-- Description -->
@@ -167,8 +135,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="above-heading">Marketplace</div>
-                    <h2 class="h2-heading">Marketplace designed for businesses to interact with their customers.</h2>
+                    {{-- <div class="above-heading">Marketplace</div>
+                    <h2 class="h2-heading">Marketplace designed for businesses to interact with their customers.</h2> --}}
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
             <div class="row">
@@ -180,8 +148,8 @@
                             <img class="img-fluid" src="images/description-1.png" alt="alternative">
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title">Register your Business</h4>
-                            <p>Once registered your business you have the ability to create your own subscription plan for your customers to subscribe to.</p>
+                            <h4 class="card-title">Targeting Audience</h4>
+                            <p>We provide direct assistance with finding your industry target audience making advertising much easier. </p>
                             {{-- <p>Sign up your business, set your subscription prices for your customers.</p> --}}
                         </div>
                     </div>
@@ -193,8 +161,8 @@
                             <img class="img-fluid" src="images/description-2.png" alt="alternative">
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title">Subscription Plan</h4>
-                            <p>Once you setup your subscription plan for your business you can create subscriber only deals on products for your customers to subscribe to.</p>
+                            <h4 class="card-title">Advertisement Assistance</h4>
+                            <p>From the Data we collected we put together the best price range that will help increase <b> conversions rate By 40%.</b></p>
                             {{-- <p>Once registered you can create a subscription for your business and create subscriber only deals for your customers.</p> --}}
                             {{-- <p>Create a subscription plan for your business that customers can subscribe to. You can give your customer deals on products.</p> --}}
                         </div>
@@ -207,9 +175,9 @@
                             <img class="img-fluid" src="images/description-3.png" alt="alternative">
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title">Analytics Tool</h4>
+                            <h4 class="card-title">Tool is Free to Use</h4>
                             {{-- <p>You can track the number of clicks for each deal that you post on the marketplace.</p> --}}
-                            <p>Track your business analytical data within the marketplace to view results and drive traffic to your business.</p>
+                            <p>Adsionary is <b> Free to Use </b> tool our goal is to help business owners that struggle with advertising learn more about there industry. </p>
                         </div>
                     </div>
                     <!-- end of card -->
@@ -221,129 +189,6 @@
     <!-- end of description -->
 
 
-    <!-- Features -->
-    <div id="features" class="tabs" style="background-color:   #f7edef">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="above-heading">Benefits</div>
-                    <h2 class="h2-heading">Benefits of Marketplace</h2>
-                    <p class="p-heading">Voucheryhub marketplace main goal is for businesses to reach their customers efficiently, as well as provide a opportunity for businesses to earn extra income monthly. </p>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-12">
-
-                    <!-- Tabs Links -->
-                    <ul class="nav nav-tabs" id="argoTabs" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">Register your Business</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">Grow your Business</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="nav-tab-3" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">Analytical Data</a>
-                        </li>
-                    </ul>
-                    <!-- end of tabs links -->
-
-                    <!-- Tabs Content -->
-                    <div class="tab-content" id="argoTabsContent">
-
-                        <!-- Tab -->
-                        <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="image-container">
-                                        <img class="img-fluid" src="images/features-1.png" alt="alternative">
-                                    </div> <!-- end of image-container -->
-                                </div> <!-- end of col -->
-                                <div class="col-lg-6">
-                                    <div class="text-container">
-                                        <h3>Add your  business to the marketplace</h3>
-                                        <p>Register your business to the marketplace, you can link your website deals to the marketplace and drive traffic to your online business.</p>
-                                        <ul class="list-unstyled li-space-lg">
-                                            <li class="media">
-                                                <div class="media-body">Businesses in the marketplace can create subscription plans for their customers.</div>
-                                            </li>
-                                            <li class="media">
-                                                <div class="media-body">Businesses can set there own subscription price for customers.</div>
-                                            </li>
-                                            <li class="media">
-                                                <div class="media-body">Businesses can advertise there deals in the marketplace.</div>
-                                            </li>
-                                        </ul>
-                                      <a class="btn-solid-lg page-scroll" href="">SIGN UP IS FREE</a>
-                                    </div> <!-- end of text-container -->
-                                </div> <!-- end of col -->
-                            </div> <!-- end of row -->
-                        </div> <!-- end of tab-pane -->
-                        <!-- end of tab -->
-
-                        <!-- Tab -->
-                        <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="image-container">
-                                        <img class="img-fluid" src="images/features-2.png" alt="alternative">
-                                    </div> <!-- end of image-container -->
-                                </div> <!-- end of col -->
-                                <div class="col-lg-6">
-                                    <div class="text-container">
-                                        <h3>Grow your business and increase website traffic!</h3>
-                                        <p>Expand your business and build a community of customers.</p>
-                                        <ul class="list-unstyled li-space-lg">
-                                            <li class="media">
-                                                <div class="media-body">Expand your business reach by advertising your company deals within the marketplace.</div>
-                                            </li>
-                                            <li class="media">
-                                                <div class="media-body">Build a community within the marketplace to attract customers and to increase business sales.</div>
-                                            </li>
-                                        </ul>
-                                      <a class="btn-solid-lg page-scroll" href="">SIGN UP IS FREE</a>
-                                    </div> <!-- end of text-container -->
-                                </div> <!-- end of col -->
-                            </div> <!-- end of row -->
-                        </div> <!-- end of tab-pane -->
-                        <!-- end of tab -->
-
-                        <!-- Tab -->
-                        <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="image-container">
-                                        <img class="img-fluid" src="images/features-3.png" alt="alternative">
-                                    </div> <!-- end of image-container -->
-                                </div> <!-- end of col -->
-                                <div class="col-lg-6">
-                                    <div class="text-container">
-                                        <h3>Track Analytics</h3>
-                                        <p> Businesses can track different types of data in the marketplace that will help improve your results and drive traffic to your website.</p>
-                                        <ul class="list-unstyled li-space-lg">
-                                            <li class="media">
-                                                <div class="media-body">Businesses can track there product clicks to get a better understanding of how well there products are doing in the marketplace.</div>
-                                            </li>
-                                            <li class="media">
-                                                <div class="media-body">Businesses can track subscribers and followers count in the marketplace.</div>
-                                            </li>
-                                        
-                                        </ul>
-                                      <a class="btn-solid-lg page-scroll" href="">SIGN UP IS FREE</a>
-                                    </div> <!-- end of text-container -->
-                                </div> <!-- end of col -->
-                            </div> <!-- end of row -->
-                        </div> <!-- end of tab-pane -->
-                        <!-- end of tab -->
-                        
-                    </div> <!-- end of tab content -->
-                    <!-- end of tabs content -->
-
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of tabs -->
-    <!-- end of features -->
 
 
 
@@ -353,22 +198,25 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="text-container">
-                        <h2>Join the marketplace</h2>
-                        <p>Marketplace provides a lot of benefits that keep your business active and growing with your customers.</p>
+                        <h2> <b>The Problem:</b> Most Companies Struggle with Advertising</h2>
+                        <p>Businesses spend hundreds of dollars a month struggling to put together the correct Advertisement and never achieve the level of success that they want to generate for there product.</p>
                         <ul class="list-unstyled li-space-lg">
                              <li class="media">
-                                <div class="media-body">VoucheryHub is an E-Commerce marketplace that focuses on online businesses to direct consumers to deals for their products & services.</div>
+                                <div class="media-body"> <b>Businesses Struggle to find the correct Advertisement Method for there business. </b> </div>
                             </li>
                             <li class="media">
-                                <div class="media-body">Voucheryhub marketplace is designed to put small businesses first to help them grow.</div>
-                            </li>                           
+                                <div class="media-body"> <b>Also Businesses Struggle to find the correct platform to advertise there product on. </b> </div>
+                            </li>   
+                              <li class="media">
+                                <div class="media-body"> <b>Most Businesses Struggle finding correct pricing point for there business. </b> </div>
+                            </li>       
                         </ul>
-                        <a class="btn-solid-reg page-scroll" href="">SIGN UP IS FREE</a>
+                        {{-- <a class="btn-solid-reg page-scroll" href="">SIGN UP IS FREE</a> --}}
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-6">
                     <div class="image-container">
-                        <img class="img-fluid" src="images/details.png" alt="alternative">
+                        <img class="img-fluid" src="images/loss.png" alt="alternative" style="margin-left: 73px;">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -376,27 +224,76 @@
     </div> <!-- end of basic-1 -->
     <!-- end of details -->
 
+    <!-- Details -->
+    <div id="details" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                        <div class="image-container">
+                        <img class="img-fluid" src="images/landingpagead2.png" alt="alternative">
+                    </div> <!-- end of image-container -->
+                 
+                </div> <!-- end of col -->
+                <div class="col-lg-6">
+                
+                    <div class="text-container">
+                        <h2> <b>The Solution:</b> We Target Areas Businesses Struggle The Most In.</h2>
+                        <p>We collect Data from Advertisements from all industries to help create the perfect advertisement for your Business.</p>
+                        <ul class="list-unstyled li-space-lg">
+                             <li class="media">
+                                <div class="media-body"> <b>Our tool will help you decide the Best Advertisement Methods for your industry. </b> </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-body"> <b>Our tool will help you decide the best industry to advertise you particular product in. </b> </div>
+                            </li> 
+                            
+                            <li class="media">
+                                <div class="media-body"> <b>We give you best price points ranges for your product according to data to increase conversion rate. </b> </div>
+                            </li>     
+                        </ul>
+                        {{-- <a class="btn-solid-reg page-scroll" href="">SIGN UP IS FREE</a> --}}
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details -->
+
+
 
     <!-- Video -->
     <div id="video" class="basic-2" style="background-color:  #f7edef">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+                             <div class="text-container">
+                        <h2> <b>Our Service is Completely FREE</b></h2>
+                        <p></p>
+                        <ul class="list-unstyled li-space-lg">
+                             <li class="media">
+                                <div class="media-body"> <b>Our purpose is to help businesses during these hard economic times. </b> </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-body"> <b>We add Data to our databases monthly and once you sign up we send monthly updates.</b> </div>
+                            </li> 
+                            
+                            <li class="media">
+                                <div class="media-body"> <b>Once you sign up you will recieve FULL ACCESS FOR FREE NO CREDIT CARD REQUIRED </b> </div>
+                            </li>     
 
-                    <!-- Video Preview -->
-                    <div class="image-container">
-                        <div class="video-wrapper">
-                            <a class="popup-youtube" href="https://www.youtube.com/watch?v=GRNYgEpqNwE" data-effect="fadeIn">
-                                <img class="img-fluid" src="images/video-image.png" alt="alternative">
-                                <span class="video-play-button">
-                                    <span></span>
-                                </span>
-                            </a>
-                        </div> <!-- end of video-wrapper -->
-                    </div> <!-- end of image-container -->
-                    <!-- end of video preview -->
+                            <li>
+                                  <a class="btn-solid-lg page-scroll" href="{{ route('register') }}">SIGN UP IS FREE</a>
+                            </li>
 
-                    <div class="p-heading">VoucheryHub is an E-Commerce marketplace that focuses on online businesses to direct consumers to deals for their products & services.</div>        
+                             <li>
+                             <a class="btn-solid-lg page-scroll" href="{{route('login.google')}}">Sign in Google</a>
+                            </li>
+                        </ul>
+                        {{-- <a class="btn-solid-reg page-scroll" href="">SIGN UP IS FREE</a> --}}
+                    </div> <!-- end of text-container -->
+
+                  
+
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -412,26 +309,26 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="footer-col first">
-                        <h4>Voucheryhub.inc</h4>
+                        <h4>Adsionary.inc</h4>
                     </div>
                 </div> <!-- end of col -->
                 <div class="col-md-4">
                     <div class="footer-col middle">
-                        <h4>Privacy Policy</h4>
+                        {{-- <h4>Privacy Policy</h4> --}}
                         <ul class="list-unstyled li-space-lg p-small">
                            
                             <li class="media">
-                                <div class="media-body"><a class="white" href="">Terms & Condition</a>,<a class="white" href="">Privacy Policy</a></div>
+                                {{-- <div class="media-body"><a class="white" href="">Terms & Condition</a>,<a class="white" href="">Privacy Policy</a></div> --}}
                             </li>
                         </ul>
                     </div>
                 </div> <!-- end of col -->
                 <div class="col-md-4">
                     <div class="footer-col last">
-                        <h4>Contact</h4>
+                        {{-- <h4>Contact</h4> --}}
                         <ul class="list-unstyled li-space-lg p-small">
                             <li class="media">
-                                <div class="media-body"><a class="white" href="">FAQs</a></div>
+                                {{-- <div class="media-body"><a class="white" href="">FAQs</a></div> --}}
                             </li>
                         </ul>
                     </div> 

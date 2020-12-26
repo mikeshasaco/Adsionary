@@ -295,7 +295,7 @@ $(document).ready(function(){
     {
             localStorage.setItem('active', 'dashboard');
             window.location.href = window.location.origin ;
-            console.log(window.location.origin)
+            console.log(window.location.origin + '/dasboard')
     }
 
     function adtype()

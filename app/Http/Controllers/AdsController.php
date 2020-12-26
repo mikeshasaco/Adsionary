@@ -12,6 +12,7 @@ use App\Models\Industry;
 use App\Models\Tag;
 use App\Models\Percentage;
 use App\Models\Social;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 class AdsController extends Controller
 {
@@ -230,7 +231,14 @@ class AdsController extends Controller
 
     public function landingpage()
     {
-        return view('ads.landingpage');
+        if(Auth::user())
+        {
+            return redirect('/dashboard');
+        }
+        else{
+            return view('ads.landingpage');
+
+        }
     }
 
     // public function tagsaudience()

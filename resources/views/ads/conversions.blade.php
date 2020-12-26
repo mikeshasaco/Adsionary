@@ -37,7 +37,7 @@ body, html{
 }
 </style>
 
-<meta http-equiv="refresh" content="0.1;url= /" />
+<meta http-equiv="refresh" content="0.1;url= /dashboard" />
 <h2 class="animate">Adsionary</h2>
 
 @endsection
