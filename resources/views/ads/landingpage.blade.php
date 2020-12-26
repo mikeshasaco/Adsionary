@@ -129,7 +129,7 @@
                             <h1 style="font-size: 3rem">Improve your Business Advertisement conversion rate</h1>
                             {{-- <p class="p-large">Subscription base marketplace for online businesses to help earn extra income and expand</p> --}}
                             <p class="p-large">The software tool that takes data from thousands of businesses and finds the best metrics to improve your business conversion rate using data.  <br> <b> All yours for FREE.</b>  </p>
-                            <a class="btn-solid-lg page-scroll" href="">SIGN UP IS FREE</a>
+                            <a class="btn-solid-lg page-scroll" href="{{route('register')}}">SIGN UP IS FREE</a>
                              <a class="btn-solid-lg page-scroll" href="{{route('login.google')}}" style="margin-top: 10px;">Sign in with Google</a>
 
                         </div> <!-- end of text-container -->
