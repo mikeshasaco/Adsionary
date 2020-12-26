@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Redirect;
+
 // use Laravel\Socialite\Facades\Socialite;
 
 /*
@@ -61,6 +63,10 @@ Route::group(['middleware' => 'all'], function () {
 });
 
 Route::get('/home', [App\Http\Controllers\AdsController::class, 'landingpage'])->name('landingpage');
+
+Route::get('/', function() {
+    return redirect('/home');
+});
 
 
 
