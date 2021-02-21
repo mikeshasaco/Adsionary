@@ -23,7 +23,6 @@
             
             <h6 style="color: #5161ce;text-align:center; font-weight:bold;">Register to gain FREE access to Social Media Ads Analytics</h6>
             <h6 style="color: #5161ce;text-align:center; font-weight:bold;">Gain access to best advertisement strategies for your industry</h6>
-            <h6 style="color: #5161ce;text-align:center; font-weight:bold;">Receive monthly updates sent to your Email for Free </h6>
 
            
 
