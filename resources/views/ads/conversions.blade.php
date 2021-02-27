@@ -89,7 +89,7 @@ src="https://www.facebook.com/tr?id=387119268900181&ev=PageView
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '3873690949389526');
   fbq('track', 'PageView');
-        fbq('track', 'AdsionaryRegistration');
+        fbq('track', 'NewAdsionaryRegisteration');
 
 </script>
 <noscript><img height="1" width="1" style="display:none"
